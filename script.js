@@ -141,7 +141,6 @@ function getPasswordOptions() {
       "Do you want to include lowercase characters? Y or N:"
     );
     const lowercaseConvert = lowercaseChar.toUpperCase();
-    console.log(lowercaseConvert);
     if (lowercaseConvert === "Y" || lowercaseConvert === "N") {
       if (lowercaseConvert === "Y") {
         charIncrement++;
@@ -162,7 +161,6 @@ function getPasswordOptions() {
       "Do you want to include uppercase characters? Y or N:"
     );
     const uppercaseConvert = uppercaseChar.toUpperCase();
-    console.log(uppercaseConvert);
     if (uppercaseConvert === "Y" || uppercaseConvert === "N") {
       if (uppercaseConvert === "Y") {
         charIncrement++;
@@ -181,7 +179,6 @@ function getPasswordOptions() {
   function numberSelect() {
     numberChar = prompt("Do you want to include number characters? Y or N:");
     const numberConvert = numberChar.toUpperCase();
-    console.log(numberConvert);
     if (numberConvert === "Y" || numberConvert === "N") {
       if (numberConvert === "Y") {
         charIncrement++;
@@ -200,7 +197,6 @@ function getPasswordOptions() {
   function specialSelect() {
     specialChar = prompt("Do you want to include special characters? Y or N:");
     const specialConvert = specialChar.toUpperCase();
-    console.log(specialConvert);
     if (specialConvert === "Y" || specialConvert === "N") {
       if (specialConvert === "Y") {
         charIncrement++;
@@ -218,16 +214,12 @@ function getPasswordOptions() {
     getPasswordOptions();
   }
   calcArray();
-  console.log(charIncrement);
-  console.log(choiceArray);
-  // getRandom();
 }
 
 // Function for calculating how many arrays i need to access
 
 function calcArray() {
   calcArraySum = passConvert / charIncrement;
-  console.log(calcArraySum);
 }
 
 // Function for getting a random element from an array
@@ -239,7 +231,6 @@ function getRandomLower() {
     );
     lowerArray.push(lowerCasedCharacters[randomLowerCaseIndex]);
   }
-  // console.log(lowerArray);
 }
 
 function getRandomUpper() {
@@ -249,7 +240,6 @@ function getRandomUpper() {
     );
     upperArray.push(upperCasedCharacters[randomUpperCaseIndex]);
   }
-  // console.log(upperArray);
 }
 
 function getRandomNumber() {
@@ -259,7 +249,6 @@ function getRandomNumber() {
     );
     numberArray.push(numericCharacters[randomNumberCaseIndex]);
   }
-  // console.log(numberArray);
 }
 
 function getRandomSpecial() {
@@ -269,7 +258,6 @@ function getRandomSpecial() {
     );
     specialArray.push(specialCharacters[randomSpecialCaseIndex]);
   }
-  // console.log(specialArray);
 }
 
 // Function/Logic for determining what arrays to include
@@ -306,7 +294,6 @@ function callArrays() {
     if (!indexArray.includes(randomChoice)) {
       indexArray.push(randomChoice);
     }
-    // console.log(indexArray);
   }
   for (i = 0; i < indexArray.length; i++) {
     shuffleArray.push(finalArray[indexArray[i]]);
@@ -317,23 +304,17 @@ function callArrays() {
     passwordfinal = passwordfinal + shuffleArray[i];
   }
   return passwordfinal;
-  console.log(passwordfinal);
 }
-console.log(shuffleArray);
-// const shuffledArr = finalArray.sort(() => Math.random() - 0.5);
-// console.log(shuffledArr);
-
-// console.log(choiceArray);
 
 // Function to generate password with user input
 function generatePassword() {
   programReset();
   getPasswordOptions();
-  // shuffleArray = [];
   callArrays();
-  // arrayReset();
+}
 
-  // return callArrays();
+function resetScreen() {
+  passwordText = null;
 }
 
 // Function to reset all arrays
@@ -363,11 +344,11 @@ function programReset() {
   finalArray = [];
   shuffleArray = [];
   indexArray = [];
-  // passwordfinal = "";
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var clearBtn = document.querySelector("#clear");
 
 // Write password to the #password input
 function writePassword() {
@@ -379,68 +360,13 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+clearBtn.addEventListener("click", resetScreen);
 
-// ///////////////////////////////////////////
-// My code starts here
-
-// HERE ARE THE PROMPTS
-//
-//
-//
-// getPasswordOptions();
-// callArrays();
-// getRandomLower();
-// getRandomUpper();
-// getRandomNumber();
-// getRandomSpecial();
-// callArrays();
-// charLength();
-// lowercaseSelect();
-// uppercaseSelect();
-// numberSelect();
-// specialSelect();
-
-//
-//
-// Lowercase function setup
-//
-
-//
-//
-//
-//  Uppercase function setup
-//
-
-//
-//
-// Number function setup
-//
-
-//
-//
-//
-// Special character function setup
-//
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 ////////////////////////////////////////////////////////////////////////////////////
-// MY CODE STARTS HERE
+// MY INITIAL CODE STARTS HERE. UNUSED IN THE END BUT KEPT IN FOR TRAINING/FUTURE REFERENCE PURPOSES
 //
 //
-// 1 x prompt for number of letters
-// 4 x prompts and confirms for the length of the password.
-//
-// DONT FORGET TO ONLY RUN GAME LOGIC IF ONE OF THREE LETTERS IS CHOSEN!!
+
 //
 //
 // Prompt user to select BASIC, INTERMEDIATE or PRO password
