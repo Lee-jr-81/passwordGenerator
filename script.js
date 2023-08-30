@@ -314,7 +314,7 @@ function generatePassword() {
 }
 
 function resetScreen() {
-  passwordText = null;
+  passwordText.value = "";
 }
 
 // Function to reset all arrays
@@ -348,7 +348,6 @@ function programReset() {
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var clearBtn = document.querySelector("#clear");
 
 // Write password to the #password input
 function writePassword() {
@@ -360,7 +359,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-clearBtn.addEventListener("click", resetScreen);
 
 ////////////////////////////////////////////////////////////////////////////////////
 // MY INITIAL CODE STARTS HERE. UNUSED IN THE END BUT KEPT IN FOR TRAINING/FUTURE REFERENCE PURPOSES
